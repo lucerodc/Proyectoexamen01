@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	version="3.0">
+	
+	<persistence-unit name="hibernateOracle"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- entidades o entities -->
+		
+		<class>hibernate.ejercicio.usuario.p.Ejercicio1</class>
+		<class>hibernate.ejercicio.usuario.p.UserDao</class>
+		<class>hibernate.ejercicio.usuario.p.UserEntity</class>
+		<class>hibernate.ejercicio.usuario.p.UtilsFecha</class>
+		<class>entitys.Direccion</class>
+		<class>entitys.Persona</class>
+		<class>entitys.UAUUNIANOTMain</class>
+		<class>entitys.ejercicio1.Biblioteca2</class>
+		<class>entitys.ejercicio1.Direccion2</class>
+		<class>entitys.ejercicio1.Main_pract</class>
+		
+		
+	<properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+            <property name="javax.persistence.jdbc.user" value="curso" />
+            <property name="javax.persistence.jdbc.password" value="password" />
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle8iDialect" />
+            <property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+        </properties>
+	 </persistence-unit>
+	 
+
+	
+		<persistence-unit name="ejemploHibernate"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- entidades o entities -->
+		<class>hibernate.entities.Cliente</class>
+		<class>hibernate.entities.Alumno</class>
+		<class>hibernate.ejercicios.ejercicioUsuario.Usuario</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	
+		<properties>
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/curso?serverTimezone=Europe/Madrid" />
+			<property name="jakarta.persistence.jdbc.user" value="root" />
+			<property name="jakarta.persistence.jdbc.password"
+				value="password" />
+			<property name="jakarta.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+
+	
+	
+	
+</persistence>
